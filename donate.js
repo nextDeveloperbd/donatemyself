@@ -29,7 +29,7 @@ function donateNoaBtn(){
     const donateNoa = document.getElementById('donateNoa')
     const donateNoaEl = parseFloat(donateNoa.innerText);
     const donateNoaInputEl = parseFloat(document.getElementById('donateNoaInput').value);
-   if(typeof donateNoaInputEl !== 'number'){
+   if(typeof donateNoaInputEl !== 'number' ||donateNoaInputEl <= 0 ){
     return alert('Please provide valid number')
    };
    const totalNoaDonate = donateNoaEl + donateNoaInputEl;
@@ -43,6 +43,17 @@ function donateNoaBtn(){
    console.log(restTaka);
    sum += totalNoaDonate
    donateNoa.innerText = sum
+//    Donate history
+const donateHistoryContainer = document.getElementById('donateHistoryDetails')
+const noaTitleText = document.getElementById('NoaTitle').innerText
+donateHistoryContainer.innerHTML+= `
+<div class="border border-1 rounded-md mb-2 space-y-1 p-4">
+                <h1 class="text-xl font-semibold">${donateNoaInputEl} BDT is ${noaTitleText}</h1>
+                <h1 class=" font-semibold">Taka <span class='text-green-600'>${donateNoaInputEl} BDT</span></h1>
+                <h3 class="bg-slate-100 p-2">Date : ${new Date().toLocaleString()}</h3>
+            </div>
+
+`
       
 };
 
@@ -52,7 +63,7 @@ function donateFeni(){
     const donateFeni = document.getElementById('donateFeni')
     const donateFeniEl = parseFloat(donateFeni.innerText);
     const donateFeniInputEl = parseFloat(document.getElementById('donateFeniInput').value);
-   if(typeof donateFeniInputEl !== 'number'){
+   if(typeof donateFeniInputEl !== 'number' ||donateFeniInputEl <= 0){
     return alert('Please provide valid number')
    };
    const totalFeniDonate = donateFeniEl + donateFeniInputEl;
@@ -65,7 +76,18 @@ function donateFeni(){
     mainTakaEl.innerText = restTaka
    console.log(restTaka);
    sum += totalFeniDonate
-   donateFeni.innerText = sum
+   donateFeni.innerText = sum;
+   //    Donate history
+const donateHistoryContainer = document.getElementById('donateHistoryDetails')
+const feniTitleText = document.getElementById('feniTitle').innerText
+donateHistoryContainer.innerHTML+= `
+<div class="border border-1 rounded-md mb-2 space-y-1 p-4">
+                <h1 class="text-xl font-semibold">${donateFeniInputEl} BDT is ${feniTitleText}</h1>
+                <h1 class=" font-semibold">Taka <span class='text-green-600'>${donateFeniInputEl} BDT</span></h1>
+                <h3 class="bg-slate-100 p-2">Date : ${new Date().toLocaleString()}</h3>
+            </div>
+
+`
    
     
 };
@@ -76,7 +98,7 @@ function donateQuota(){
     const donateQuota = document.getElementById('donateQtota')
     const donateQuotaEl = parseFloat(donateQuota.innerText);
     const donateQuotaInputEl = parseFloat(document.getElementById('donateQuotaInput').value);
-   if(typeof donateQuotaInputEl !== 'number'){
+   if(typeof donateQuotaInputEl !== 'number'|| donateQuotaInputEl <= 0){
     return alert('Please provide valid number')
    };
    const totalQuotaDoate = donateQuotaEl + donateQuotaInputEl;
@@ -90,6 +112,18 @@ function donateQuota(){
    console.log(restTaka);
    sum += totalQuotaDoate
    donateQuota.innerText = sum
-   
+      //    Donate history
+const donateHistoryContainer = document.getElementById('donateHistoryDetails')
+const quotaTitleText = document.getElementById('quotaTitle').innerText
+donateHistoryContainer.innerHTML+= `
+<div class="border border-1 rounded-md mb-2 space-y-1 p-4">
+                <h1 class="text-xl font-semibold">${donateQuotaInputEl} BDT is Donated ${quotaTitleText}</h1>
+                <h1 class=" font-semibold">Taka <span class='text-green-600'>${donateQuotaInputEl} BDT</span></h1>
+                <h3 class="bg-slate-100 p-2">Date : ${new Date().toLocaleString()}</h3>
+            </div>
+
+`
     
 }
+
+
