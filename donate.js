@@ -28,8 +28,9 @@ function donateNoaBtn(){
     let sum = 0;
     const donateNoa = document.getElementById('donateNoa')
     const donateNoaEl = parseFloat(donateNoa.innerText);
-    const donateNoaInputEl = parseFloat(document.getElementById('donateNoaInput').value);
-   if(typeof donateNoaInputEl !== 'number' ||donateNoaInputEl <= 0 ){
+    const inputField = document.getElementById('donateNoaInput')
+    const donateNoaInputEl = parseFloat(inputField.value);
+   if(typeof donateNoaInputEl !== 'number' ||donateNoaInputEl <= 0 || inputField.value.trim() === ''){
     return alert('Please provide valid number')
    };
    const totalNoaDonate = donateNoaEl + donateNoaInputEl;
@@ -54,7 +55,7 @@ donateHistoryContainer.innerHTML+= `
             </div>
 
 `
-      
+    alert('successfully sent donate')  
 };
 
 // Donate feni btn
@@ -62,8 +63,9 @@ function donateFeni(){
     let sum = 0;
     const donateFeni = document.getElementById('donateFeni')
     const donateFeniEl = parseFloat(donateFeni.innerText);
-    const donateFeniInputEl = parseFloat(document.getElementById('donateFeniInput').value);
-   if(typeof donateFeniInputEl !== 'number' ||donateFeniInputEl <= 0){
+    const inputField = document.getElementById('donateFeniInput')
+    const donateFeniInputEl = parseFloat(inputField.value);
+   if(typeof donateFeniInputEl !== 'number' ||donateFeniInputEl <= 0 || inputField.value.trim() === ''){
     return alert('Please provide valid number')
    };
    const totalFeniDonate = donateFeniEl + donateFeniInputEl;
@@ -97,8 +99,9 @@ function donateQuota(){
     let sum = 0;
     const donateQuota = document.getElementById('donateQtota')
     const donateQuotaEl = parseFloat(donateQuota.innerText);
-    const donateQuotaInputEl = parseFloat(document.getElementById('donateQuotaInput').value);
-   if(typeof donateQuotaInputEl !== 'number'|| donateQuotaInputEl <= 0){
+    const inputField = document.getElementById('donateQuotaInput')
+    const donateQuotaInputEl = parseFloat(inputField.value);
+   if(typeof donateQuotaInputEl !== 'number'|| donateQuotaInputEl <= 0 || inputField.value.trim() === ''){
     return alert('Please provide valid number')
    };
    const totalQuotaDoate = donateQuotaEl + donateQuotaInputEl;
@@ -126,4 +129,11 @@ donateHistoryContainer.innerHTML+= `
     
 }
 
+// Common function
+function common(id){
+    const donatePlace = document.getElementById(id);
+    const donatePlaceEl = parseFloat(donatePlace.innerText);
+    return donatePlaceEl
+    
+}
 
