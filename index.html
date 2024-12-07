@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation</title>
+    <!-- Daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font awesome-->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.1/css/all.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class=" bg-base-200">
+        <div class="navbar max-w-7xl mx-auto">
+            <div class="navbar-start">
+
+                <a href="/blog.html" class="btn bg-[#b4f461] hover:bg-[#a1e24c] text-xl">BLOG</a>
+            </div>
+            <div class="navbar-center  md:flex gap-2">
+                <img src="./assets/logo.png" alt="">
+                <a href="/index.html" class="font-bold">Donate Bangladesh</a>
+            </div>
+            <div class="navbar-end">
+
+                <ul>
+
+                    <li class="font-bold"><i class="fa-solid fa-bangladeshi-taka-sign mr-2 text-green-600 "></i><span
+                            id="mainTaka">5500</span> BDT</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- Main section -->
+    <section class="my-6">
+        <!-- tab -->
+        <div class=" text-center">
+            <button id="btnDonation" onclick="donationBtn()" class="btn bg-[#b4f461]  ">Donation</button>
+            <button id="btnHistory" onclick="historyBtn()" class="btn  ">History</button>
+        </div>
+        <div id="donateHistoryDetails" class="hidden w-3/4 mx-auto border border-1 p-4 my-2 min-h-screen rounded-md">
+            <h1>History details</h1>
+        </div>
+        <!-- Image and details  -->
+        <div id="donateContainer" class="w-3/4 mx-auto  my-2">
+            
+            <!-- 1st card -->
+            <div class="grid grid-cols-2 gap-2 mb-3 border border-1 p-2 rounded-md">
+
+                <div>
+                    <img src="./assets/noakhali.png" alt="Movie" />
+                </div>
+
+                <div class="flex flex-col gap-2 space-y-2 p-4">
+                    <div class="flex gap-2 items-center bg-gray-300 w-1/3 p-2 rounded-lg">
+                        <img src="./assets/coin.png" alt="">
+                        <h2 class="font-semibold"><span id="donateNoa">500</span> BDT </h2>
+                    </div>
+                    <h3 class="font-semibold">Donate for Flood at Noakhali, Bangladesh</h3>
+                    <p>The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
+                        donation will help provide essential supplies and to those affected by this disaster. Every
+                        contribution, big or small, makes difference. Please join us in supporting the relief efforts
+                        and making a positive impact on the lives of those in need.</p>
+                    <input id="donateNoaInput" type="number" placeholder="Enter Donate amount"
+                        class="p-2 border border-1 rounded">
+                    <button  id="donateNoaBtn" onclick="donateNoaBtn()"
+                        class="btn bg-[#b4f461] hover:bg-[#a1e24c]">Donate Now</button>
+                    <!-- Open the modal using ID.showModal() method -->
+                        <!-- onclick="my_modal_1.showModal()" -->
+                    <dialog id="my_modal_1" class="modal">
+                        <div class="modal-box">
+                            <h3 class="text-lg font-bold">Hello!</h3>
+                            <p class="py-4">Donate for Flood at Noakhali, Bangladesh</p>
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn">Close</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+                </div>
+            </div>
+            <!-- 2nd card -->
+            <div class="grid grid-cols-2 gap-2 mb-3 border border-1 p-2 rounded-md">
+
+                <div>
+                    <img src="./assets/feni.png" alt="Movie" />
+                </div>
+
+                <div class="flex flex-col gap-2 space-y-2 p-4">
+                    <div class="flex gap-2 bg-gray-300 items-center w-1/3 p-2 rounded-lg">
+                        <img src="./assets/coin.png" alt="">
+                        <h2 class="font-semibold"><span id="donateFeni">500</span> BDT </h2>
+                    </div>
+                    <h3 class="font-semibold">Donate for Flood Relief in Feni,Bangladesh</h3>
+                    <p>The recent floods in Feni have devastated local communities, leading to severe disruption and
+                        loss. Your generous donation will help provide immediate aid, including food, clean water, and
+                        medical supplies, to those affected by this calamity. Together, we can offer crucial support and
+                        help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a
+                        real difference. Please consider donating today to assist those in urgent need</p>
+                    <input id="donateFeniInput" type="number" placeholder="Enter Donate amount"
+                        class="p-2 border border-1 rounded">
+                    <button onclick="donateFeni()" class="btn bg-[#b4f461] hover:bg-[#a1e24c]">Donate Now</button>
+                </div>
+                <!-- onclick="my_modal_2.showModal()"  -->
+                <dialog id="my_modal_2" class="modal">
+                    <div class="modal-box">
+                      <h3 class="text-lg font-bold">Hello!</h3>
+                      <p class="py-4">Donate for Flood Relief in Feni,Bangladesh</p>
+                      <div class="modal-action">
+                        <form method="dialog">
+                          <!-- if there is a button in form, it will close the modal -->
+                          <button class="btn">Close</button>
+                        </form>
+                      </div>
+                    </div>
+                  </dialog>
+            </div>
+            <!-- 1st card -->
+            <div class="grid grid-cols-2 gap-2  border border-1 p-2 rounded-md">
+
+                <div>
+                    <img src="./assets/quota-protest.png" alt="Movie" />
+                </div>
+
+                <div class="flex flex-col gap-2 space-y-2 p-4">
+                    <div class="flex gap-2 bg-gray-300 items-center w-1/3 p-2 rounded-lg">
+                        <img src="./assets/coin.png" alt="">
+                        <h2 class="font-semibold"><span id="donateQtota">500</span> BDT </h2>
+                    </div>
+                    <h3 class="font-semibold">Aid for Injured in the Quota Movement</h3>
+                    <p>The recent Quota movement has resulted in numerous injuries and significant hardship for many
+                        individuals. Your support is crucial in providing medical assistance, rehabilitation, and
+                        necessary supplies to those affected. By contributing, you help ensure that injured individuals
+                        receive the care and support they need during this challenging time. Every donation plays a
+                        vital role in alleviating their suffering and aiding in their recovery. Please consider making a
+                        donation to support these brave individuals in their time of need.</p>
+                    <input id="donateQuotaInput" type="number" placeholder="Enter Donate amount"
+                        class="p-2 border border-1 rounded">
+                    <button onclick="donateQuota()" class="btn bg-[#b4f461] hover:bg-[#a1e24c]">Donate Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="donate.js"></script>
+</body>
+
+
+</html>
