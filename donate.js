@@ -1,19 +1,25 @@
-
+function getBtnColor(id){
+    const value = document.getElementById(id);
+    value.classList.add('bg-[#b4f461]');
+    return value;
+}
+function removeBtnColor(id){
+    const value = document.getElementById(id);
+    value.classList.remove('bg-[#b4f461]');
+    return value;
+}
 // history btn
 function historyBtn(){
-    const historyBtnEl = document.getElementById('btnHistory')
-    historyBtnEl.classList.add('bg-[#b4f461]');
-    const donationBtnEl = document.getElementById('btnDonation');
-    donationBtnEl.classList.remove('bg-[#b4f461]');
+    getBtnColor('btnHistory')
+    removeBtnColor('btnDonation')
     const donateContainerEl = document.getElementById('donateContainer');
     donateContainerEl.classList.add('hidden');
     const donateHistoryDetailsEl = document.getElementById('donateHistoryDetails');
     donateHistoryDetailsEl.classList.remove('hidden')
 };
 // Donation button 
-function donationBtn(){
-    const historyBtnEl = document.getElementById('btnHistory')
-    historyBtnEl.classList.remove('bg-[#b4f461]');
+    function donationBtn(){
+    removeBtnColor('btnHistory')
     const donationBtnEl = document.getElementById('btnDonation');
     donationBtnEl.classList.add('bg-[#b4f461]')
     const donateContainerEl = document.getElementById('donateContainer');
@@ -26,8 +32,9 @@ function donationBtn(){
 // Donate btn Noakhali
 function donateNoaBtn(){
     let sum = 0;
-    const donateNoa = document.getElementById('donateNoa')
-    const donateNoaEl = parseFloat(donateNoa.innerText);
+   /*  const donateNoa = document.getElementById('donateNoa')
+    const donateNoaEl = parseFloat(donateNoa.innerText); */
+    const donateNoaEl = getValueById('donateNoa');
     const inputField = document.getElementById('donateNoaInput')
     const donateNoaInputEl = parseFloat(inputField.value);
    if(typeof donateNoaInputEl !== 'number' ||donateNoaInputEl <= 0 || inputField.value.trim() === ''){
@@ -55,21 +62,6 @@ donateHistoryContainer.innerHTML+= `
             </div>
 
 `
-/* const modalId = document.getElementById('my_modal_1');
-modalId.innerHTML = `
- <div class="modal-box">
-                            <h3 class="text-lg font-bold">Hello!</h3>
-                            <img src="./assets/coin.png" alt="">
-                            <p class="py-4"${noaTitleText}</p>
-                            <div class="modal-action">
-                                <form method="dialog">
-                                    <!-- if there is a button in form, it will close the modal -->
-                                    <button class="btn">Close</button>
-                                </form>
-                            </div>
-                        </div>
-
-` */
     alert(`successfully ${donateNoaInputEl} taka donate sent`)  
 };
 
@@ -151,10 +143,10 @@ function homeClick(){
 }
 
 // Common function
-function common(id){
-    const donatePlace = document.getElementById(id);
-    const donatePlaceEl = parseFloat(donatePlace.innerText);
-    return donatePlaceEl
+function getValueById(id){
+    const value = document.getElementById(id);
+    const valueEl = parseFloat(value.innerText);
+    return valueEl
     
 }
 
