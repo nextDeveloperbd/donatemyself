@@ -49,13 +49,28 @@ const donateHistoryContainer = document.getElementById('donateHistoryDetails')
 const noaTitleText = document.getElementById('NoaTitle').innerText
 donateHistoryContainer.innerHTML+= `
 <div class="border border-1 rounded-md mb-2 space-y-1 p-4">
-                <h1 class="text-xl font-semibold">${donateNoaInputEl} BDT is ${noaTitleText}</h1>
-                <h1 class=" font-semibold">Taka <span class='text-green-600'>${donateNoaInputEl} BDT</span></h1>
+                <h1 class="text-xl font-semibold"><span class="text-green-600">${donateNoaInputEl}</span> BDT is ${noaTitleText}</h1>
+                
                 <h3 class="bg-slate-100 p-2">Date : ${new Date().toLocaleString()}</h3>
             </div>
 
 `
-    alert('successfully sent donate')  
+/* const modalId = document.getElementById('my_modal_1');
+modalId.innerHTML = `
+ <div class="modal-box">
+                            <h3 class="text-lg font-bold">Hello!</h3>
+                            <img src="./assets/coin.png" alt="">
+                            <p class="py-4"${noaTitleText}</p>
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn">Close</button>
+                                </form>
+                            </div>
+                        </div>
+
+` */
+    alert(`successfully ${donateNoaInputEl} taka donate sent`)  
 };
 
 // Donate feni btn
@@ -84,13 +99,13 @@ const donateHistoryContainer = document.getElementById('donateHistoryDetails')
 const feniTitleText = document.getElementById('feniTitle').innerText
 donateHistoryContainer.innerHTML+= `
 <div class="border border-1 rounded-md mb-2 space-y-1 p-4">
-                <h1 class="text-xl font-semibold">${donateFeniInputEl} BDT is ${feniTitleText}</h1>
-                <h1 class=" font-semibold">Taka <span class='text-green-600'>${donateFeniInputEl} BDT</span></h1>
+                <h1 class="text-xl font-semibold"><span class="text-green-600">${donateFeniInputEl}</span> BDT is ${feniTitleText}</h1>
+                
                 <h3 class="bg-slate-100 p-2">Date : ${new Date().toLocaleString()}</h3>
             </div>
 
 `
-   
+alert(`successfully ${donateFeniInputEl} taka donate sent`)
     
 };
 
@@ -120,13 +135,19 @@ const donateHistoryContainer = document.getElementById('donateHistoryDetails')
 const quotaTitleText = document.getElementById('quotaTitle').innerText
 donateHistoryContainer.innerHTML+= `
 <div class="border border-1 rounded-md mb-2 space-y-1 p-4">
-                <h1 class="text-xl font-semibold">${donateQuotaInputEl} BDT is Donated ${quotaTitleText}</h1>
-                <h1 class=" font-semibold">Taka <span class='text-green-600'>${donateQuotaInputEl} BDT</span></h1>
+                <h1 class="text-xl font-semibold"><span class="text-green-600">${donateQuotaInputEl}</span> BDT is Donated ${quotaTitleText}</h1>
                 <h3 class="bg-slate-100 p-2">Date : ${new Date().toLocaleString()}</h3>
             </div>
 
 `
-    
+alert(`successfully ${donateQuotaInputEl} taka donate sent `)
+}
+// Redirect
+function blogClick(){
+    location.replace("blog.html")
+}
+function homeClick(){
+    location.replace("index.html")
 }
 
 // Common function
